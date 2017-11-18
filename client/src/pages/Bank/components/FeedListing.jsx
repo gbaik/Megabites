@@ -28,7 +28,7 @@ export default class FeedListing extends Component {
         />
         <CardText className="food-items" expandable={true}>
           { foodItems.map((foodItem) => <FoodItem { ...foodItem } key={foodItem.id} />)}
-          <RaisedButton fullWidth={true} label="Claim" onClick={this.handleClaim()}/>
+          <RaisedButton fullWidth={true} label="Claim" onClick={this.handleClaim}/>
         </CardText>
       </Card>
     );

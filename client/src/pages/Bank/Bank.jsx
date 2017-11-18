@@ -152,19 +152,16 @@ export default class Bank extends Component {
   }
 
   fetchPickups() {
-    console.log('pickups');
     return axios.get(`/pickups?userid=${this.state.user.id}`)
     .then((response) => this.setState({pickups: response.data}));
   }
 
   fetchClaims() {
-    console.log('claims');
     return axios.get(`/claims?userid=${this.state.user.id}`)
     .then((response) => this.setState({claims: response.claims}));
   }
 
   acceptClaim(claimId) {
-    console.log('accept');
     return axios.post(`/claims/accept`, {userId: this.state.user.id, claimId})
     .then(() => {
       this.fetchClaims();
@@ -173,7 +170,6 @@ export default class Bank extends Component {
   }
 
   cancelClaim(claimId) {
-    console.log('cancel');
     return axios.post(`/claims/cancel`, {userId: this.state.user.id, claimId})
     .then(() => {
       this.fetchClaims();
@@ -182,7 +178,6 @@ export default class Bank extends Component {
   }
 
   completeClaim(claimId) {
-    console.log('complete');
     return axios.post(`/claims/complete`, {userId: this.state.user.id, claimId})
     .then(() => {
       this.fetchClaims();
