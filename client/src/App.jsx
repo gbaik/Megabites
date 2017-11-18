@@ -10,10 +10,10 @@ export default class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <h1>App</h1>
-        <Home />
-        <Donor />
-        <Bank />
+        <div>
+
+          <Bank />
+        </div>
       </MuiThemeProvider>
     );
   }
